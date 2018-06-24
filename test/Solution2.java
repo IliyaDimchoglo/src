@@ -13,20 +13,20 @@ public class Solution2 {
 
 	}
 
-	public int solution(int[] T) {
-		int minWinterDays = T.length;
+	public int solution(int[] days) {
+		int minWinterDays = days.length;
 		boolean isWinter = true;
 		int summer = 0;
 		int winter = 0;
 
-		for (int i = 0; i < T.length; i++) {
+		for (int i = 0; i < days.length; i++) {
 			if (!isWinter) {
-				if (T[i] <= winter) {
+				if (days[i] <= winter) {
 					winter = summer;
 					isWinter = true;
 				}
 			} else {
-				if (T[i] > winter) {
+				if (days[i] > winter) {
 					minWinterDays = i;
 					summer = winter;
 					isWinter = false;
